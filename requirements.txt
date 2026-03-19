@@ -1,0 +1,14 @@
+# Abhängigkeiten für Normal-Verteilungs-Projekt
+# 
+# LIZENZINFORMATION:
+# Alle Pakete sind frei verwendbar und mit MIT/BSD-Lizenzen kompatibel
+#
+
+# Numerische Berechnungen - BSD-3-Clause License
+numpy>=1.20.0
+
+# Statistische Funktionen - BSD-3-Clause License  
+scipy>=1.6.0
+
+# Datenvisualisierung - PSF (Python Software Foundation) License
+matplotlib>=3.3.0
