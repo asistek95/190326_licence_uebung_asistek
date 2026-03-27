@@ -1,0 +1,27 @@
+% ============================================================
+% KI-Verzeichnis – automatisierte Einbindung via \nocite{*}
+% ============================================================
+%
+% Statt die Einträge manuell aufzulisten:
+%
+%   \nocite{prompt01, prompt02, ..., promptArchitectureGen}   ← VERALTET / fehleranfällig
+%
+% wird hier \nocite{*} verwendet. Damit werden ALLE Einträge
+% der .bib-Datei geladen. Der keyword-Filter in
+% \printbibliography stellt sicher, dass nur Einträge mit
+% keywords={ki} im Verzeichnis erscheinen.
+%
+% Neue Prompts müssen nur noch in ki_prompts.bib eingetragen
+% werden – kein manuelles Nachtragen in \nocite nötig.
+% ============================================================
+
+% Alle Einträge aus ki_prompts.bib laden (automatisch):
+\nocite{*}
+
+% KI-Verzeichnis ausgeben (gefiltert nach keyword=ki):
+\printbibliography[
+  title={KI-gestützte Werkzeuge (Prompts)},
+  heading=bibnumbered,
+  keyword=ki,
+  resetnumbers=true
+]

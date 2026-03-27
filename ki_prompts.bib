@@ -1,0 +1,257 @@
+@online{chatgpt2025,
+  author    = {{OpenAI}},
+  title     = {ChatGPT -- GPT-5 Modell, Gespräche und Inhalte},
+  year      = {2025},
+  url       = {https://chat.openai.com},
+  urldate   = {2025-10-09},
+  keywords  = {ki}
+}
+
+@online{prompt01,
+  author    = {{Claude 3 Opus via GitHub Copilot}},
+  title     = {Prompt 1: Architektur-Design einer Three-Tier Flask-Applikation zur McTime-API-Anbindung},
+  year      = {2025},
+  url       = {https://github.com/features/copilot},
+  urldate   = {2025-02-02},
+  keywords  = {ki, architecture, flask},
+  note      = {Detaillierte Anforderung: Trennung in Frontend, Middleware (Business-Logic) und Backend. Implementierung einer modularen Ordnerstruktur mit \_\_init\_\_.py Packages, Environment-Variable-Support zur Konfiguration und strikter Einhaltung des Single-Responsibility-Prinzips.}
+}
+
+@online{prompt02,
+  author    = {{Claude 3.5 Sonnet via GitHub Copilot}},
+  title     = {Prompt 2: Modulare Spezifikation der Middleware-Ordnerstruktur},
+  year      = {2025},
+  url       = {https://github.com/features/copilot},
+  urldate   = {2025-02-02},
+  keywords  = {ki, middleware, oop},
+  note      = {Definition der Dateien: core.py (Orchestrierung), auth.py (API-Key/Header), request\_handler.py (Rate Limiting/Retry), sowie Fachmodule employee\_manager.py, time\_manager.py und mail\_manager.py inkl. Export-Definitionen via \_\_all\_\_.}
+}
+
+@online{prompt03,
+  author    = {{Claude 3 Opus via GitHub Copilot}},
+  title     = {Prompt 3: Evaluation von Middleware-Design-Entscheidungen},
+  year      = {2025},
+  url       = {https://github.com/features/copilot},
+  urldate   = {2025-02-02},
+  keywords  = {ki, security, design-patterns},
+  note      = {Analyse von fünf Kernaspekten: Security (API-Key Exposure), zentrales Rate Limiting, standardisiertes Error Handling, Testbarkeit durch Isolation und modulare Wartbarkeit. Inklusive Code-Beispielen für Szenarien und Diskussion von Trade-offs.}
+}
+
+@online{prompt04,
+  author    = {{Claude 3 Opus via GitHub Copilot}},
+  title     = {Prompt 4: Implementierung der Core-Middleware-Klasse},
+  year      = {2025},
+  url       = {https://github.com/features/copilot},
+  urldate   = {2025-02-02},
+  keywords  = {ki, python, backend},
+  note      = {Spezifikation der Klasse 'Middleware': \_\_init\_\_ zur Initialisierung von Auth, RequestHandler und Feature-Managern; connect() für Probe-Requests; get\_connection\_status() für Debug-Daten; health\_check() für Monitoring. Inkl. Type Hints und Docstrings.}
+}
+
+@online{prompt05,
+  author    = {{Claude 3.5 Sonnet via GitHub Copilot}},
+  title     = {Prompt 5: Implementierung des AuthHandlers für sichere Authentifizierung},
+  year      = {2025},
+  url       = {https://github.com/features/copilot},
+  urldate   = {2025-02-02},
+  keywords  = {ki, security, auth},
+  note      = {Anforderungen: Sicherer API-Key-Speicher ohne Logging-Exposure, Generierung von HTTP-Headern (Content-Type, API\_KEY), Validierung gegen https://mctime.com/api/v2/auth mit 5s Timeout und Graceful Error Handling.}
+}
+
+@online{prompt06,
+  author    = {{Claude 3.5 Sonnet via GitHub Copilot}},
+  title     = {Prompt 6: Implementierung von Sliding-Window Rate Limiting und robustem Request-Handling},
+  year      = {2025},
+  url       = {https://github.com/features/copilot},
+  urldate   = {2025-02-02},
+  keywords  = {ki, network, algorithm},
+  note      = {RateLimiter: 60 Req/Min, Sliding Window, can\_make\_request(), wait\_time(). RequestHandler: 3 Retries, exponentieller Backoff ($2^{attempt}$ Sekunden), 10s Timeout und Handling von HTTP 429 (Retry-After).}
+}
+
+@online{prompt07,
+  author    = {{Claude 3.5 Sonnet via GitHub Copilot}},
+  title     = {Prompt 7: Implementierung des EmployeeManagers mit Daten-Transformation},
+  year      = {2025},
+  url       = {https://github.com/features/copilot},
+  urldate   = {2025-02-02},
+  keywords  = {ki, data, caching},
+  note      = {Funktionen: get\_organizations(), get\_employees(), get\_employees\_cached(). Parsing von verschachtelten McTime-JSON-Items; In-Memory Caching (TTL: 300s); alphabetische Sortierung; Handling malformierter Responses.}
+}
+
+@online{prompt08,
+  author    = {{Claude 3.5 Sonnet via GitHub Copilot}},
+  title     = {Prompt 8: Implementierung des TimeManagers für Zeiterfassungslogik},
+  year      = {2025},
+  url       = {https://github.com/features/copilot},
+  urldate   = {2025-02-02},
+  keywords  = {ki, logic, business},
+  note      = {Methoden: get\_times(), get\_statistics(), \_calculate\_hours(). Features: Datumsfilter (YYYY-MM-DD), Stundenberechnung aus "HH:MM"-Strings, Statistik-Aggregierung (total\_hours, average, days\_worked) mit Rundung auf eine Dezimalstelle.}
+}
+
+@online{prompt09,
+  author    = {{Claude 3.5 Sonnet via GitHub Copilot}},
+  title     = {Prompt 9: Implementierung des MailManagers für SMTP-Versand},
+  year      = {2025},
+  url       = {https://github.com/features/copilot},
+  urldate   = {2025-02-02},
+  keywords  = {ki, smtp, mail},
+  note      = {Features: TLS-Verschlüsselung (Port 587), MIMEMultipart, Base64-Encoding für Attachments, HTML-Templates. Nutzung von SMTP-Credentials aus Env-Variablen (SERVER, PORT, USER, PASS, SENDER).}
+}
+
+@online{prompt10,
+  author    = {{Claude 3.5 Sonnet via GitHub Copilot}},
+  title     = {Prompt 10: Flask-Frontend-Integration und Route-Definitionen},
+  year      = {2025},
+  url       = {https://github.com/features/copilot},
+  urldate   = {2025-02-02},
+  keywords  = {ki, flask, rest},
+  note      = {Endpoints: /api/times/<id>, /api/chart-data/<id>, /export-csv (POST), /send-email (POST). Anforderungen: Einheitliches JSON-Format (success/data/error), korrekte Status Codes und CSV-File-Download-Stream.}
+}
+
+@online{prompt11,
+  author    = {{Claude 3.5 Sonnet via GitHub Copilot}},
+  title     = {Prompt 11: Implementierung eines thread-safe In-Memory Caching-Systems},
+  year      = {2025},
+  url       = {https://github.com/features/copilot},
+  urldate   = {2025-02-02},
+  keywords  = {ki, performance, caching},
+  note      = {Funktionen: MD5-basierte Key-Generierung aus Prefix und Parametern, get\_cached(), set\_cached() mit 300s TTL, clear\_cache() und optionale Cache-Tags zur selektiven Invalidierung.}
+}
+
+@online{prompt12,
+  author    = {{Claude 4 Sonnet via GitHub Copilot}},
+  title     = {Prompt 12: Erstelle ein einfaches vierteiliges GUI‑Layout zur späteren Datenanzeige:
+1. Sektion: Projektname und Datenbank‑Verbindungsstatus (vorerst Boolean‑Platzhalter).
+2. Sektion: Übersicht mit Dropdowns für Firma, Mitarbeiter und Zeitraum.
+3. Sektion: Tabelle zur Anzeige (z. B. Pandas DataFrame) mit CSV‑Download‑Option.
+4. Sektion: Leerer Platzhalter für künftige Funktionen.},
+  year      = {2025},
+  url       = {https://github.com/features/copilot},
+  urldate   = {2025-09-10},
+  keywords  = {ki}
+}
+
+@online{prompt13,
+  author    = {{Claude 4 Sonnet via GitHub Copilot}},
+  title     = {Prompt 13: Hinzufügen eines Footer mit Link zum Impressum},
+  year      = {2025},
+  url       = {https://github.com/features/copilot},
+  urldate   = {2025-11-29},
+  keywords  = {ki}
+}
+
+@online{prompt14,
+  author    = {{Claude 4 Sonnet via GitHub Copilot}},
+  title     = {Prompt 14: Refactor Idee fuer backend, aber nix kaputt machen},
+  year      = {2025},
+  url       = {https://github.com/features/copilot},
+  urldate   = {2025-11-26},
+  keywords  = {ki, refactor, architecture},
+  note      = {Prompt (einfaches Deutsch): "Mach bitte refactor vorschlag fuer \#file:backend, aber nix kaputt. Nur kleine schritte, kurz erklaeren."}
+}
+
+@online{prompt15,
+  author    = {{Claude 4 Sonnet via GitHub Copilot}},
+  title     = {Prompt 15: Beispiel fuer GET\_TIMES Aufruf},
+  year      = {2025},
+  url       = {https://github.com/features/copilot},
+  urldate   = {2025-10-11},
+  keywords  = {ki, backend, times},
+  note      = {Prompt: "Zeig code sample wie ich \#file:backend/modules/GET\_TIMES.py aufrufe mit employee id und datum."}
+}
+
+@online{prompt16,
+  author    = {{Claude 4 Sonnet via GitHub Copilot}},
+  title     = {Prompt 16: Beispiel fuer GET\_USERID mit email},
+  year      = {2025},
+  url       = {https://github.com/features/copilot},
+  urldate   = {2025-10-12},
+  keywords  = {ki, backend, userid},
+  note      = {Prompt: "Ich brauch code beispiel fuer \#file:backend/modules/GET\_USERID.py mit email, bitte kurz."}
+}
+
+@online{prompt17,
+  author    = {{Claude 3 Opus via GitHub Copilot}},
+  title     = {Prompt 17: Beispiel fuer BackendService in api\_handler},
+  year      = {2025},
+  url       = {https://github.com/features/copilot},
+  urldate   = {2025-10-22},
+  keywords  = {ki, backend, service},
+  note      = {Prompt: "Zeig code beispiel wie BackendService aus \#file:backend/api\_handler.py initialisiert und benutzt wird."}
+}
+
+@online{prompt18,
+  author    = {{Claude 3 Opus via GitHub Copilot}},
+  title     = {Prompt 18: Beispiel fuer times.py helper},
+  year      = {2025},
+  url       = {https://github.com/features/copilot},
+  urldate   = {2025-10-23},
+  keywords  = {ki, backend, helper},
+  note      = {Prompt: "Bitte gib kleines code beispiel fuer \#file:backend/modules/times.py Nutzung, ich bin lost."}
+}
+
+@online{prompt19,
+  author    = {{Claude Sonnet 3.7 Thinking via GitHub Copilot}},
+  title     = {Prompt 19: Grundstruktur für Design erstellen},
+  year      = {2025},
+  url       = {https://github.com/features/copilot},
+  urldate   = {2025-09-15},
+  keywords  = {ki, redesign, flask, layout},
+  note      = {Prompt: "Erstelle für eine bestehende Flask-Seite ein modernes, übersichtliches Grundlayout. Verwende links eine Sidebar für die Navigation und oben einen Header mit dem Text 'Datentransparenz ist unser Ding'. Wähle ein professionelles, aktuelles Farbschema und moderne Schriften und ersetze damit das bisherige, ältere Design. Das Layout soll als Jinja2-Template dienen, das ich später leicht erweitern kann (z.B. Bereiche für Inhalt und zusätzliche Skripte)."}
+}
+
+@online{prompt20,
+  author    = {{Claude Sonnet 4 via GitHub Copilot}},
+  title     = {Prompt 20: Datenfilter und Tabelle zusammenführen},
+  year      = {2025},
+  url       = {https://github.com/features/copilot},
+  urldate   = {2025-09-28},
+  keywords  = {ki, frontend, ui-ux, jinja2},
+  note      = {Prompt: "Ordne im Template das Filterformular direkt über der Datenübersicht (Tabelle) an, damit klar ist, dass beide zusammengehören. Beide Elemente sollen wie ein gemeinsamer Abschnitt wirken, damit Nutzer sofort sehen, dass sich die Filter auf die Tabelle auswirken. Baue außerdem eine Progressbar ein, die am Anfang voll dargestellt wird und später für Lade- oder Statusanzeigen genutzt werden kann."}
+}
+
+@online{prompt21,
+  author    = {{Claude Sonnet 4 via GitHub Copilot}},
+  title     = {Prompt 21: Dynamische Ladeanimation implementieren},
+  year      = {2025},
+  url       = {https://github.com/features/copilot},
+  urldate   = {2025-10-13},
+  keywords  = {ki, javascript, animation, feedback},
+  note      = {Prompt: "Nutze JavaScript, um die vorhandene Progressbar als Ladeanzeige zu verwenden. Wenn der Nutzer auf 'Daten laden' klickt, soll die Progressbar sichtbar von 0\% auf 100\% laufen und so zeigen, dass gerade ein Ladevorgang stattfindet. Die Bewegung soll flüssig wirken und am Ende automatisch den Zustand "Fertig" anzeigen."}
+}
+
+@online{prompt22,
+  author    = {{Claude Opus 4.5 via GitHub Copilot}},
+  title     = {Prompt 22: Finales Footer Design und Zentrierung},
+  year      = {2025},
+  url       = {https://github.com/features/copilot},
+  urldate   = {2025-11-16},
+  keywords  = {ki, css, design, refinement},
+  note      = {Prompt: "Gestalte den Footer schlicht, aber gut lesbar. Ziel ist ein sehr minimalistischer Footer, der zum restlichen modernen Design passt."}
+}
+
+@online{promptDataflowGen,
+  author    = {{ChatGPT 5.4}},
+  title     = {Prompt ImageGen-Dataflow: Bild generieren der den Datenflow der Software repräsentiert},
+  year      = {2026},
+  url       = {https://chatgpt.com},
+  urldate   = {2025-03-17},
+  keywords  = {ki}
+}
+
+@online{promptArchitectureGen,
+  author    = {{ChatGPT 5.4}},
+  title     = {Prompt ImageGen-Architecture: Bild Generierung für Architektur der Software},
+  year      = {2026},
+  url       = {https://chatgpt.com},
+  urldate   = {2025-03-17},
+  keywords  = {ki}
+}
+
+@online{promptCoding,
+  author    = {{Claude 3.5 Sonnet via GitHub Copilot}},
+  title     = {Prompt Coding: Implementierung eines thread-safe In-Memory Caching-Systems},
+  year      = {2025},
+  url       = {https://github.com/features/copilot},
+  urldate   = {2025-02-02},
+  keywords  = {ki}
+}
